@@ -12,10 +12,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println(msg1);
-        float a = scanner.nextInt();
+        float a = scanner.nextFloat();
 
         System.out.println(msg2);
-        float b = scanner.nextInt();
+        float b = scanner.nextFloat();
 
         System.out.println(msg3);
 
