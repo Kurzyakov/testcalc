@@ -5,26 +5,38 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        String msg1 = "Введите первое число:";
-        String msg2 = "Введите второе число:";
+        String msg1 = "Введите первое число: ";
+        String msg2 = "Введите второе число: ";
         String msg3 = "Какое действие хотите совершить? + - * /";
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println(msg1);
-        float a = scanner.nextFloat();
+        float a = read(scanner);
+        //float a = scanner.nextFloat();
 
         System.out.println(msg2);
-        float b = scanner.nextFloat();
+        float b = read(scanner);
+        //float b = scanner.nextFloat();
 
         System.out.println(msg3);
 
         String action = scanner.next();
-        String result = null;
+
         String calc = calc(action, a, b);
         System.out.println(calc);
 
 
+    }
+    public static float read(Scanner scanner) {
+        String value = scanner.next();
+        float result = 0;
+        try {
+            result = Float.parseFloat(value);
+        } catch (Exception e){
+            System.out.println("Введенное значение не число");
+        }
+        return result;
     }
 
     public static String calc(String action, float a, float b) {
